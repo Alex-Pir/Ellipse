@@ -2,6 +2,8 @@
 {
     public class Figure
     {
+        protected const int FRACTION_LENGTH = 2;
+
         public Point Center;
         public int HorizontalRadius { get; set; }
         public int VerticalRadius { get; set; }
@@ -16,12 +18,14 @@
 
         public double GetSquare()
         {
-            return Math.PI * HorizontalRadius * VerticalRadius;
+            double square = Math.PI * HorizontalRadius * VerticalRadius;
+            return Math.Round(square, Figure.FRACTION_LENGTH);
         }
 
         public double GetLength()
         {
-            return Math.PI * (HorizontalRadius + VerticalRadius);
+            double length = Math.PI * (HorizontalRadius + VerticalRadius);
+            return Math.Round(length, Figure.FRACTION_LENGTH);
         }
 
         protected int checkRadius(int radius)
