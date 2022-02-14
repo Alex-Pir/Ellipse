@@ -5,6 +5,7 @@
         public Point Center;
         public int HorizontalRadius { get; set; }
         public int VerticalRadius { get; set; }
+
         public Figure(Point center, int horizontalRadius, int verticalRadius)
         {
             HorizontalRadius = checkRadius(horizontalRadius);
@@ -27,7 +28,7 @@
         {
             if (radius <= 0)
             {
-                throw new ArgumentException("Radius cannot be negative");
+                throw new ArgumentException("Radius cannot be negative or 0");
             }
 
             return radius;
