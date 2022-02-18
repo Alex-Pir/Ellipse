@@ -12,7 +12,7 @@ class Program
         try
         {
             Figure ellipse = new Figure(center, 10, 12);
-            Console.WriteLine($"Длина эллипса: {ellipse.GetLength()}");
+            Console.WriteLine($"Длина окружности эллипса: {ellipse.GetLength()}");
             Console.WriteLine($"Площадь эллипса: {ellipse.GetSquare()}");
         }
         catch (ArgumentException ex)
