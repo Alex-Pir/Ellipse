@@ -2,7 +2,7 @@
 {
     public class Figure
     {
-        protected const int EXACTITUDE = 2;
+        private const int EXACTITUDE = 2;
 
         public Point Center { get; private set };
         public int HorizontalRadius { get; private set; }
