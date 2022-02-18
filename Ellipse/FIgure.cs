@@ -2,16 +2,16 @@
 {
     public class Figure
     {
-        protected const int FRACTION_LENGTH = 2;
+        protected const int EXACTITUDE = 2;
 
-        public Point Center;
-        public int HorizontalRadius { get; set; }
-        public int VerticalRadius { get; set; }
+        public Point Center { get; private set };
+        public int HorizontalRadius { get; private set; }
+        public int VerticalRadius { get; private set; }
 
         public Figure(Point center, int horizontalRadius, int verticalRadius)
         {
-            HorizontalRadius = checkRadius(horizontalRadius);
-            VerticalRadius = checkRadius(verticalRadius);
+            HorizontalRadius = CheckRadius(horizontalRadius);
+            VerticalRadius = CheckRadius(verticalRadius);
 
             Center = center;
         }
@@ -19,16 +19,16 @@
         public double GetSquare()
         {
             double square = Math.PI * HorizontalRadius * VerticalRadius;
-            return Math.Round(square, Figure.FRACTION_LENGTH);
+            return Math.Round(square, Figure.EXACTITUDE);
         }
 
         public double GetLength()
         {
             double length = Math.PI * (HorizontalRadius + VerticalRadius);
-            return Math.Round(length, Figure.FRACTION_LENGTH);
+            return Math.Round(length, Figure.EXACTITUDE);
         }
 
-        protected int checkRadius(int radius)
+        protected int CheckRadius(int radius)
         {
             if (radius <= 0)
             {
